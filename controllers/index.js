@@ -21,9 +21,13 @@ exports.postLanding = (req, res) => {
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
     service: 'gmail',
+    secure: false,
     auth: {
       user: 'atlcourierandtrans@gmail.com',
       pass: process.env.EMAIL_PWD
+    },
+    tls: {
+      rejectUnauthorized: false
     }
   });
   // setup email data with unicode symbols
