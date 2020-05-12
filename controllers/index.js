@@ -1,6 +1,4 @@
-require("dotenv").config();
-const { emailHelper } = require("../utils/helpers/emailHelper"),
-  nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
 
 
 exports.getLanding = (req, res) => {
@@ -39,6 +37,7 @@ exports.postLanding = (req, res) => {
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
+      res.redirect("/");
     } else {
       console.log('Email sent: ' + info.response);
       res.redirect("/")
@@ -46,7 +45,3 @@ exports.postLanding = (req, res) => {
   });
 
 }
-// auth: {
-  //     user: 'atlcourierandtrans@gmail.com', // generated ethereal user
-  //     pass: 'whiteford32$'  // generated ethereal password
-  //   },
