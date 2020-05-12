@@ -1,0 +1,192 @@
+:root{
+  --black: #212121;
+  --white: #fff;
+  --iron-grey: #636363;
+  --iron-shadow: #535353;
+  --prime-blue: 	#428bca;
+  --danger-red: #d9534f;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html,body{
+  width: 100%;
+  scroll-behavior: smooth;
+}
+body{
+  background-color: var(--black);
+  font-family: "Roboto", Arial, sans-serif;
+  /* background-image: url("../images/hero_boxes.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: bold;
+}
+#main-content{
+  background: var(--white);
+  color: var(--black);
+  padding: 0 0 1rem 0;
+}
+/* ============== Company Info ========= */
+#company-info{
+  background-color: var(--black);
+  color: var(--white);
+  padding-top: 1rem;
+}
+nav{
+  background-color: transparent !important;
+}
+.navbar{
+  background-color: transparent !important;
+}
+.navbar-toggler{
+  border: 0;
+}
+.navbar-toggler:focus{
+  outline: none;
+  border: none;
+}
+.navbar-toggler i{
+  color: var(--white);
+}
+.navbar-nav,.nav-link, .navbar-brand{
+  color: var(--white) !important;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px 2px rgba(0,0,0,.8);
+  font-weight: bolder;
+}
+.navbar i{
+  color: var(--white);
+}
+/* =================JUMBOTRON ================= */
+.jumbotron{
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  height: 60vh;
+  /* background-color: var(--white); */
+  background-image: url("../images/wide-box-img2.jpg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: cover;
+  background-origin: border-box;
+}
+.jumbotron h1{
+  font-weight: 900;
+  /* color: var(--white); */
+  padding: 0;
+  margin: 0;
+}
+.jumbotron h2{
+  font-weight: 900;
+  color: var(--white);
+  padding: 0;
+  margin: 0;
+}
+/* ============= ABOUT ================== */
+
+/* ============= SERVICES =============== */
+#services{
+  background-color: var(--iron-shadow);
+}
+#services h3{
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1rem 0;
+}
+#outer-services-row-div{
+  width: 80%;
+  margin: 2rem auto 0rem auto;
+}
+.card, .card-img-top{
+  border-radius: 0;
+  border:none;
+  margin-bottom: 2rem;
+}
+.card{
+  box-shadow: 0 10px 10px -5px rgba(0,0,0,.2);
+}
+.card-img-top{
+  height: 200px;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-position-x: center;
+  background-size: cover;
+}
+#residential .card-img-top{
+  background-image: url("../images/courier_hero.jpg");
+}
+#commercial .card-img-top{
+  background-image: url("../images/courier_img4.jpg");
+}
+/* ============= Contact ================ */
+#pre-contact em{
+  font-size: 1.5rem;
+}
+#contact h3{
+  color: var(--white);
+  text-align: center;
+  padding-top: 1rem;
+}
+#contact{
+  background-color: var(--black);
+}
+#contact form{
+  width: 80%;
+  margin: 0 auto;
+  color: var(--white);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+#contact input{
+  margin-bottom: 2rem;
+  background-color: transparent;
+  color: var(--white);
+  padding-left: .25rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--white);
+  width: 100%;
+}
+/* ============= Footer ================= */
+#footer{
+  padding-top: 1rem;
+  width: 80%;
+  margin: 0 auto;
+}
+#footer a, #footer a:hover{
+  color: var(--black);
+}
+/* ============= Media Queries ========== */
+@media screen and (max-width: 414px){
+  .container{
+    padding: 0;
+  }
+  #company-info{
+    padding-bottom: 1rem;
+  }
+  #company-info p{
+    margin-bottom: 0;
+  }
+  .jumbotron h1, 
+  .jumbotron h2{
+    padding: .5rem;
+  }
+  .jumbotron h1{
+    font-size: 20vw;
+  }
+  /* ============= ABOUT ================== */
+  #about .img-fluid{
+    padding-right: 0 !important;
+  }
+  /* ============= SERVICES =============== */
+  #services .col-md-6{
+    margin-bottom: 1rem;
+  }
+
+}
