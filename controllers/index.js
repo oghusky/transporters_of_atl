@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { emailHelper } = require("../utils/helpers/emailHelper"),
   nodemailer = require("nodemailer");
 
@@ -11,35 +12,41 @@ exports.getLanding = (req, res) => {
 }
 
 exports.postLanding = (req, res) => {
-  try {
-    const { firstName, lastName, email, phone, message } = req.body;
-    const output = `
+  const { firstName, lastName, email, phone, message } = req.body;
+  const output = `
     <p>Email Details</p>
     <p>Name: ${lastName}, ${firstName}</p>
     <p>Email: ${email}</p>
     <p>Phone: ${phone}</p>
     <p>Message: ${message}</p>
     `;
-    let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      secure: false,
-      tls: {
-        rejectUnauthorized: false
-      }
-    });
-    let mailOptions = {
-      from: `${email}`,
-      to: "atlcourierandtrans@gmail.com",
-      subject: `${firstName} ${lastName} wants to be contacted`,
-      html: output
-    };
-    transporter.sendMail(mailOptions, (err, info) => {
-      if (err) console.log(err);
-      console.log(info);
-      console.log(nodemailer.getTestMessageUrl(info));
-      res.render("index")
-    })
-  } catch (err) {
-    if (err) console.log(err.code);
-  }
+  // create reusable transporter object using the default SMTP transport
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'atlcourierandtrans@gmail.com',
+      pass: process.env.EMAIL_PWD
+    }
+  });
+  // setup email data with unicode symbols
+  const mailOptions = {
+    from: 'randomemail@email.com',
+    to: 'atlcourierandtrans@gmail.com', // list of receivers
+    subject: `${firstName} ${lastName} wants to be contacted`, // Subject line
+    html: output // html body
+  };
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.redirect("/")
+    }
+  });
+
 }
+// auth: {
+  //     user: 'atlcourierandtrans@gmail.com', // generated ethereal user
+  //     pass: 'whiteford32$'  // generated ethereal password
+  //   },
