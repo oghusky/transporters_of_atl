@@ -1,4 +1,5 @@
-const nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer"),
+  email_psd = process.env.EMAIL_PWD;
 
 exports.getLanding = (req, res) => {
   try {
@@ -25,7 +26,7 @@ exports.postLanding = (req, res) => {
     auth: {
       type: "login",
       user: 'atlcourierandtrans@gmail.com',
-      pass: process.env.EMAIL_PWD
+      pass: email_psd
     },
     tls: {
       rejectUnauthorized: false
