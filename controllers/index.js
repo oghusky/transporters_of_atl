@@ -26,7 +26,7 @@ exports.postLanding = (req, res) => {
     auth: {
       type: "login",
       user: 'atlcourierandtrans@gmail.com',
-      pass: process.env.PWD
+      pass: `${process.env.PWD}`
     },
     tls: {
       rejectUnauthorized: false
