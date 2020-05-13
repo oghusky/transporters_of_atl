@@ -1,6 +1,5 @@
 const nodemailer = require("nodemailer");
 
-
 exports.getLanding = (req, res) => {
   try {
     res.render("index");
@@ -26,7 +25,7 @@ exports.postLanding = (req, res) => {
     auth: {
       type: "login",
       user: 'atlcourierandtrans@gmail.com',
-      pass: process.env.EMAIL_PWD
+      pass: "whiteford32$"
     },
     tls: {
       rejectUnauthorized: false
