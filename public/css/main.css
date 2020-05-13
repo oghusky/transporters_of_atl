@@ -38,6 +38,10 @@ h1,h2,h3,h4,h5,h6{
   color: var(--white);
   padding-top: 1rem;
 }
+img#nav-logo.img-fluid{
+  width: 50%;
+  padding: 0;
+}
 nav{
   background-color: transparent !important;
 }
@@ -62,6 +66,9 @@ nav{
 }
 .navbar i{
   color: var(--white);
+}
+a.navbar-brand{
+  width: 50%;
 }
 /* =================JUMBOTRON ================= */
 .jumbotron{
@@ -179,6 +186,10 @@ nav{
   }
   .jumbotron h1{
     font-size: 20vw;
+  }
+  /* ============= NAVBAR ================= */
+  img#nav-logo.img-fluid{
+    width: 100%;
   }
   /* ============= ABOUT ================== */
   #about .img-fluid{

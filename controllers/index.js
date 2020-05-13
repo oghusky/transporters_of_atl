@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer"),
-  email_psd = process.env.EMAIL_PWD;
+  email_psd = String(process.env.EMAIL_PWD);
 
 exports.getLanding = (req, res) => {
   try {
