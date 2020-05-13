@@ -23,6 +23,7 @@ exports.postLanding = (req, res) => {
     service: 'gmail',
     secure: false,
     auth: {
+      type: "login",
       user: 'atlcourierandtrans@gmail.com',
       pass: process.env.EMAIL_PWD
     },
