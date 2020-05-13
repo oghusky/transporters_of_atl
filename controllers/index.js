@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer"),
-  email_psd = String(process.env.EMAIL_PWD);
+  email_psd = String(process.env.EMAIL_PWD),
+  email_name = String(process.env.EMAIL_NAME);
 
 exports.getLanding = (req, res) => {
   try {
@@ -20,13 +21,13 @@ exports.postLanding = (req, res) => {
     `;
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    // host: "smtp.gmail.com",
     secure: false,
     service: 'gmail',
     auth: {
       type: "login",
-      user: 'atlcourierandtrans@gmail.com',
-      pass: email_psd
+      user: "dumdummyemail0511@gmail.com",
+      pass: "password$1234"
     },
     tls: {
       rejectUnauthorized: false
