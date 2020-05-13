@@ -20,9 +20,9 @@ exports.postLanding = (req, res) => {
     `;
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
-    // service: 'gmail',
-    host: "gmail",
+    host: "smtp.gmail.com",
     secure: false,
+    service: 'gmail',
     auth: {
       type: "login",
       user: 'atlcourierandtrans@gmail.com',
