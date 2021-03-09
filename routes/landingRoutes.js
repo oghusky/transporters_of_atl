@@ -6,8 +6,8 @@ router
   .route("/")
   .get(getLanding)
 
-router
-  .route("/send")
-  .post(postLanding);
+// router
+//   .route("/send")
+//   .post(postLanding);
 
 module.exports = router;

@@ -21,5 +21,5 @@ app.use("/", landingRoutes);
 
 // port to listen on
 app.listen(PORT, () => {
-  console.log('Server Started')
+  console.log('http://localhost:3000')
 })
